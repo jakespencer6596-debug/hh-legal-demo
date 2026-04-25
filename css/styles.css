@@ -490,7 +490,7 @@ body.home .hero { margin-top: 0; }        /* hero starts immediately under heade
 .hero {
   position: relative;
   background-image: url('/images/hans_haahr.jpg');
-  background-size: contain;       /* fit the image naturally, no zoom */
+  background-size: auto 100%;      /* image height fills hero, width scales naturally */
   background-position: right center;
   background-repeat: no-repeat;
   background-color: #fff;          /* match live: white left side */

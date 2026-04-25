@@ -160,39 +160,43 @@ ul, ol { padding-left: 1.25rem; }
 @media (min-width: 960px)  { .row.cols-4 { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 960px)  { .row.sidebar { grid-template-columns: 2fr 1fr; gap: 3rem; } }
 
-/* ---------- Top utility bar ---------- */
+/* ---------- Top utility bar (lighter to mirror live's tiny phone-only row) ---------- */
 .utility-bar {
-  background: var(--ink);
-  color: var(--on-ink);
-  font-size: .9rem;
+  background: #F4F1EE;
+  color: #3a1a1a;
+  font-size: .85rem;
+  border-bottom: 1px solid var(--border);
 }
 .utility-bar .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-top: .55rem;
-  padding-bottom: .55rem;
+  padding-top: .4rem;
+  padding-bottom: .4rem;
   flex-wrap: wrap;
 }
-.utility-bar a { color: var(--on-ink); text-decoration: none; }
+.utility-bar a { color: #3a1a1a; text-decoration: none; }
 .utility-bar a:hover { color: var(--accent); }
-.utility-bar .phone { font-weight: 600; }
+.utility-bar .phone { font-weight: 600; color: var(--accent); }
 .utility-bar .phone::before { content: "☎ "; margin-right: .25rem; }
+[data-theme="dark"] .utility-bar { background: var(--bg-alt); color: var(--text-soft); border-color: var(--border); }
+[data-theme="dark"] .utility-bar a { color: var(--text-soft); }
 
 /* ---------- Toolbar (lang / theme / text-size) ---------- */
 .toolbar {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: .4rem;
   flex-wrap: wrap;
 }
 .toolbar .group {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(255,255,255,.18);
+  border: 1px solid rgba(0,0,0,.12);
   border-radius: 999px;
   padding: 2px;
+  background: rgba(255,255,255,.6);
 }
 .toolbar button {
   appearance: none;
@@ -200,11 +204,11 @@ ul, ol { padding-left: 1.25rem; }
   color: inherit;
   border: 0;
   font: inherit;
-  font-size: .78rem;
+  font-size: .72rem;
   font-weight: 600;
   letter-spacing: .04em;
-  padding: .25rem .55rem;
-  min-height: 1.85rem;
+  padding: .2rem .5rem;
+  min-height: 1.6rem;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -213,27 +217,17 @@ ul, ol { padding-left: 1.25rem; }
   color: var(--on-accent);
 }
 .toolbar button:hover:not([aria-pressed="true"]) {
-  background: rgba(255,255,255,.08);
+  background: rgba(0,0,0,.06);
 }
 .toolbar .label {
-  font-size: .72rem;
+  font-size: .65rem;
   letter-spacing: .12em;
   text-transform: uppercase;
-  opacity: .7;
-  margin-right: .15rem;
+  opacity: .55;
+  margin-right: .1rem;
 }
-.toolbar .cta-pill {
-  background: var(--accent);
-  color: var(--on-accent);
-  padding: .35rem .9rem;
-  border-radius: 999px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: .78rem;
-  text-decoration: none;
-}
-.toolbar .cta-pill:hover { background: var(--accent-hover); color: var(--on-accent); }
+[data-theme="dark"] .toolbar .group { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.04); }
+[data-theme="dark"] .toolbar button:hover:not([aria-pressed="true"]) { background: rgba(255,255,255,.08); }
 
 /* ---------- Header / nav ---------- */
 .site-header {
@@ -264,10 +258,11 @@ ul, ol { padding-left: 1.25rem; }
   letter-spacing: .01em;
 }
 .brand .mark {
-  width: 56px;                     /* live: ~67px circle */
+  width: 56px;
   height: 56px;
-  border-radius: 50%;              /* circle disc — live HLG logo */
+  display: block;
   background: var(--accent);
+  border-radius: 50%;
   color: var(--on-accent);
   display: grid;
   place-items: center;
@@ -276,6 +271,12 @@ ul, ol { padding-left: 1.25rem; }
   letter-spacing: .04em;
   box-shadow: var(--shadow-sm);
 }
+.brand .mark.img {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.brand .mark.img img { width: 56px; height: 56px; display: block; }
 .brand .word { line-height: 1; }
 .brand .word small {
   display: block;
@@ -428,26 +429,46 @@ ul, ol { padding-left: 1.25rem; }
 }
 .btn-on-dark:hover { background: var(--accent); color: var(--on-accent); }
 
-/* ---------- Hero (matches live: light bg, left text + right portrait) ---------- */
+/* ---------- Hero (matches live: full-bleed photo with overlay text) ---------- */
 .hero {
   position: relative;
-  background: var(--bg);
+  background-image: url('/images/hans_haahr.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
   color: var(--text);
   padding: 0;
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
+  min-height: 78vh;
+  margin-top: -1px;          /* tuck under transparent header */
+}
+.hero::before {
+  /* soft white-to-transparent gradient on the left so text is readable */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 35%, rgba(255,255,255,.05) 65%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
 }
 .hero .container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
-  min-height: 60vh;
-  padding-top: clamp(2rem, 5vw, 4rem);
-  padding-bottom: clamp(2rem, 5vw, 4rem);
+  min-height: 78vh;
+  padding-top: clamp(4rem, 9vw, 7rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 @media (max-width: 880px) {
-  .hero .container { grid-template-columns: 1fr; min-height: auto; }
+  .hero {
+    background-position: 70% center;
+    min-height: auto;
+  }
+  .hero::before {
+    background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.85) 60%, rgba(255,255,255,.6) 100%);
+  }
+  .hero .container { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; padding-bottom: 3rem; }
 }
 .hero h1, .hero h2 {
   font-family: 'Open Sans', sans-serif;
@@ -456,12 +477,12 @@ ul, ol { padding-left: 1.25rem; }
   text-transform: uppercase;
   letter-spacing: .04em;
   margin: 0 0 1.25rem;
-  color: var(--text);
+  color: #1A1010;
   max-width: 16ch;
 }
 .hero .lead {
   font-size: 1rem;
-  color: var(--text);
+  color: #2a1010;
   max-width: 50ch;
   margin-bottom: 1.5rem;
   line-height: 1.65;
@@ -476,48 +497,17 @@ ul, ol { padding-left: 1.25rem; }
   display: inline-block;
   margin-bottom: .75rem;
 }
-.hero .portrait {
-  position: relative;
-  height: 100%;
-  min-height: 520px;
-  background: linear-gradient(135deg, #2A2D33 0%, #4A4E55 100%);
-  border-radius: 0;
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-}
-.hero .portrait::before {
-  /* Stylized attorney silhouette placeholder (no third-party image needed) */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 38%, rgba(255,255,255,.18) 0%, transparent 35%),
-    linear-gradient(180deg, rgba(20,20,20,.05) 0%, rgba(20,20,20,.5) 100%);
-}
-.hero .portrait::after {
-  content: "PORTRAIT";
-  position: relative;
-  color: rgba(255,255,255,.45);
-  font-size: .75rem;
-  letter-spacing: .3em;
-  font-weight: 600;
-}
-@media (max-width: 880px) {
-  .hero .portrait { min-height: 280px; }
-}
 /* Secondary (gray) button to mirror "ABOUT HLG" on live */
 .btn-secondary {
   background: var(--muted);
   color: #fff;
 }
 .btn-secondary:hover { background: #6E6E6E; color: #fff; }
-[data-theme="dark"] .hero { background: var(--bg); }
-[data-theme="dark"] .hero h1, [data-theme="dark"] .hero h2,
-[data-theme="dark"] .hero .lead { color: var(--text); }
-[data-theme="dark"] .hero .portrait {
-  background: linear-gradient(135deg, #14181f 0%, #2a2f38 100%);
+[data-theme="dark"] .hero::before {
+  background: linear-gradient(90deg, rgba(15,17,21,.95) 0%, rgba(15,17,21,.78) 35%, rgba(15,17,21,.1) 70%, rgba(15,17,21,0) 100%);
 }
+[data-theme="dark"] .hero h1, [data-theme="dark"] .hero h2 { color: #ECECEC; }
+[data-theme="dark"] .hero .lead { color: #C9CDD3; }
 
 /* Page header (for non-home pages) */
 .page-header {
@@ -610,18 +600,22 @@ ul, ol { padding-left: 1.25rem; }
 /* Team card */
 .team-card { text-align: center; }
 .team-card .avatar {
-  width: 140px;
-  height: 140px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   margin: 0 auto 1rem;
   display: grid;
   place-items: center;
-  font-size: 2.6rem;
-  font-weight: 700;
-  color: var(--on-accent);
-  background: linear-gradient(135deg, var(--accent), var(--brand-red-hover));
+  overflow: hidden;
+  background: var(--bg-alt);
   box-shadow: var(--shadow-md);
-  letter-spacing: .04em;
+}
+.team-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 .team-card h5 { margin-bottom: .15rem; }
 .team-card .role {
@@ -858,16 +852,17 @@ ul, ol { padding-left: 1.25rem; }
 }
 .social a:hover { background: var(--accent); color: var(--on-accent); }
 
-/* Demo banner */
+/* Demo banner — kept thin to avoid dominating the hero */
 .demo-banner {
   background: var(--accent);
   color: var(--on-accent);
   text-align: center;
-  font-size: .82rem;
+  font-size: .65rem;
   font-weight: 700;
-  letter-spacing: .1em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  padding: .45rem .75rem;
+  padding: .25rem .75rem;
+  line-height: 1.2;
 }
 .demo-banner a { color: var(--on-accent); text-decoration: underline; }
 

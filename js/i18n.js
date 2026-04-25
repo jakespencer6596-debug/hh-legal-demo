@@ -50,11 +50,12 @@
         bandTitle: 'Get a no-cost case review today',
         bandCTA: "Let's Talk",
         intro: {
-          eyebrow: 'Insurance Disputes & Litigation',
-          title: 'A boutique firm built around one principle: the policyholder.',
-          p1: 'We litigate first-party property claims in state and federal courts across Florida — from underpaid auto repairs and denied hurricane claims to total-loss fire investigations and complex sinkhole disputes.',
-          p2: 'Insurers know the statutes. So do we. We invoke Florida’s Valued Policy Law, the building-code-driven full-replacement provisions, and the §627.706 sinkhole framework when the facts support them — and we never charge a fee unless we recover.',
-          cta: 'Learn More'
+          eyebrow: '',
+          title: 'Insurance Disputes and Litigation',
+          p1: 'Our law firm proudly represent policyholders in a wide variety of insurance disputes and have successfully litigated cases arising out of both commercial and personal lines policies.',
+          p2: 'In our years of service, we have represented our clients in the dispute of property loss or damage, and automobile / motorcycle and liability policies, in both federal and state courts through appeal. Learn more about how we can help with your insurance claim disputes and litigation.',
+          p3: 'If you or your business have been denied an insurance claim, or have only received a portion of your loss, schedule a free consultation now.',
+          cta: 'LEARN MORE'
         },
         services: {
           eyebrow: 'What We Do',

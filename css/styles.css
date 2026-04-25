@@ -513,7 +513,7 @@ ul, ol { padding-left: 1.25rem; }
 [data-theme="dark"] .hero h1, [data-theme="dark"] .hero h2 { color: #ECECEC; }
 [data-theme="dark"] .hero .lead { color: #C9CDD3; }
 
-/* Page header (for non-home pages) */
+/* Page header (small light variant — kept for legal/utility pages) */
 .page-header {
   background: var(--bg-alt);
   border-bottom: 1px solid var(--border);
@@ -534,11 +534,48 @@ ul, ol { padding-left: 1.25rem; }
 .page-header .breadcrumbs a { color: var(--muted); text-decoration: none; }
 .page-header .breadcrumbs a:hover { color: var(--accent); }
 
-/* ---------- CTA band ---------- */
+/* Page banner — tall dark photo-bg hero matching the live site's inner pages */
+.page-banner {
+  position: relative;
+  min-height: 360px;
+  background: #2a2a2a center/cover no-repeat;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.page-banner::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.55);
+}
+.page-banner .container { position: relative; padding: 4rem var(--pad-x); }
+.page-banner h1 {
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: .01em;
+  margin: 0;
+  text-transform: none;
+}
+.page-banner .breadcrumbs {
+  margin-top: .75rem;
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
+}
+.page-banner .breadcrumbs a { color: rgba(255,255,255,.85); text-decoration: none; }
+.page-banner .breadcrumbs a:hover { color: var(--accent); }
+@media (max-width: 720px) { .page-banner { min-height: 260px; } }
+
+/* ---------- CTA band (live: ~#4D4D4D mid-gray, light weight title) ---------- */
 .cta-band {
-  background: var(--ink);
-  color: var(--on-ink);
-  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  background: #4D4D4D;
+  color: #fff;
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
 }
 .cta-band .container {
   display: flex;
@@ -547,13 +584,16 @@ ul, ol { padding-left: 1.25rem; }
   gap: 1.5rem;
   flex-wrap: wrap;
 }
-.cta-band h2 {
-  color: var(--on-ink);
+.cta-band h2, .cta-band h4 {
+  color: #fff;
   margin: 0;
-  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
-  text-transform: uppercase;
-  letter-spacing: .05em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  letter-spacing: 0;
+  text-transform: none;
 }
+[data-theme="dark"] .cta-band { background: #2a2a2a; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -599,6 +639,26 @@ ul, ol { padding-left: 1.25rem; }
 [data-theme="dark"] .service-card .icon {
   background: rgba(255,85,102,.16);
   color: var(--accent);
+}
+
+/* Team row (2-col, used on About page to mirror live) */
+.team-row {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) 2fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+.team-row .team-photo img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+@media (max-width: 720px) {
+  .team-row { grid-template-columns: 1fr; gap: 1.5rem; }
+  .team-row .team-photo img { margin: 0 auto; }
 }
 
 /* Team card */

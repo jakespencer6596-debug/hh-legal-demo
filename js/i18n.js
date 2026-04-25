@@ -47,8 +47,8 @@
           ctaPrimary: 'CONSULTATION',
           ctaSecondary: 'ABOUT HLG'
         },
-        bandTitle: 'Get a no-cost case review today',
-        bandCTA: "Let's Talk",
+        bandTitle: 'Get a No-Cost Consultation Today',
+        bandCTA: "LET'S TALK",
         intro: {
           eyebrow: '',
           title: 'Insurance Disputes and Litigation',
@@ -117,8 +117,8 @@
       },
       practice: {
         relatedTitle: 'Our Services',
-        ctaTitle: 'Get a no-cost consultation',
-        ctaButton: 'Contact Us',
+        ctaTitle: 'Get a No Cost Consultation',
+        ctaButton: 'CONTACT US',
         backToServices: '← All practice areas'
       },
       blog: {
@@ -222,8 +222,8 @@
           ctaPrimary: 'CONSULTA',
           ctaSecondary: 'SOBRE HLG'
         },
-        bandTitle: 'Reciba una evaluación de su caso sin costo',
-        bandCTA: 'Hablemos',
+        bandTitle: 'Reciba una Consulta Sin Costo Hoy',
+        bandCTA: 'HABLEMOS',
         intro: {
           eyebrow: 'Disputas y Litigios de Seguros',
           title: 'Un bufete boutique con un solo principio: el asegurado.',
@@ -291,8 +291,8 @@
       },
       practice: {
         relatedTitle: 'Nuestros Servicios',
-        ctaTitle: 'Reciba una consulta sin costo',
-        ctaButton: 'Contáctenos',
+        ctaTitle: 'Reciba una Consulta Sin Costo',
+        ctaButton: 'CONTÁCTENOS',
         backToServices: '← Todas las áreas de práctica'
       },
       blog: {
@@ -396,8 +396,8 @@
           ctaPrimary: 'CONSULTATION',
           ctaSecondary: 'À PROPOS HLG'
         },
-        bandTitle: 'Obtenez une évaluation de votre dossier sans frais',
-        bandCTA: 'Parlons-en',
+        bandTitle: 'Obtenez une Consultation Sans Frais Aujourd'hui',
+        bandCTA: 'PARLONS-EN',
         intro: {
           eyebrow: 'Litiges & Contentieux d\'Assurance',
           title: 'Un cabinet boutique fondé sur un seul principe : l\'assuré.',
@@ -465,8 +465,8 @@
       },
       practice: {
         relatedTitle: 'Nos Services',
-        ctaTitle: 'Obtenez une consultation sans frais',
-        ctaButton: 'Nous Contacter',
+        ctaTitle: 'Obtenez une Consultation Sans Frais',
+        ctaButton: 'NOUS CONTACTER',
         backToServices: '← Tous les domaines de pratique'
       },
       blog: {

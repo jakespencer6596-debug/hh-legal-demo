@@ -433,14 +433,18 @@ ul, ol { padding-left: 1.25rem; }
 .hero {
   position: relative;
   background-image: url('/images/hans_haahr.jpg');
-  background-size: cover;
+  background-size: auto 110%;
   background-position: right center;
   background-repeat: no-repeat;
+  background-color: #F5F2EE;
   color: var(--text);
   padding: 0;
   overflow: hidden;
   min-height: 78vh;
-  margin-top: -1px;          /* tuck under transparent header */
+  margin-top: -1px;
+}
+@media (min-width: 1400px) {
+  .hero { background-size: auto 105%; }
 }
 .hero::before {
   /* soft white-to-transparent gradient on the left so text is readable */

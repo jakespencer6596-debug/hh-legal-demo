@@ -49,6 +49,7 @@
         },
         bandTitle: 'Get a No-Cost Consultation Today',
         bandCTA: "LET'S TALK",
+        bandCTA2: "LET'S START",
         intro: {
           eyebrow: '',
           title: 'Insurance Disputes and Litigation',
@@ -63,15 +64,15 @@
         },
         about: {
           title: 'About Haahr Law Group',
-          p1: 'Founded in 2007 by Hans Peter Haahr, our St. Petersburg firm focuses on representing Tampa Bay homeowners and small businesses against insurance carriers that delay, deny or underpay legitimate claims.',
-          p2: 'Boutique by design. Every case is handled directly by the attorney — not pushed to a junior associate or a call-center settlement mill.',
+          p1: 'Attorney Hans Peter Haahr founded the law firm now known as Haahr Law Group in 2007 to serve the communities of Tampa Bay and the state of Florida. <strong>We\'re on your side.</strong> We represent the everyday people and help fight against the insurance companies when they wrongfully deny coverage or underpay losses.',
+          p2: '',
           tagline: "We're on your side.",
-          ctaTeam: 'Meet The Team'
+          ctaTeam: 'MORE ABOUT OUR TEAM'
         },
         team: {
           title: 'Meet the team',
-          hans: { name: 'Hans Peter Haahr', role: 'Attorney · Founder' },
-          staci: { name: 'Staci Haahr', role: 'Business Manager' },
+          hans: { name: 'Hans Haahr', role: 'Attorney' },
+          staci: { name: 'Staci Haahr', role: 'Administration' },
           lina: { name: 'Lina Rodriguez', role: 'Paralegal' }
         },
         blog: {
@@ -169,8 +170,9 @@
         follow: 'Follow Us',
         adv: 'The hiring of a lawyer is an important decision that should not be based solely on advertisements. Before you decide, ask the firm to send you free written information about its qualifications and experience.',
         legal: 'Legal Disclaimer',
-        copyright: '© 2026 Haahr Law Group. All Rights Reserved.',
-        demo: 'Demo build · Not the live firm site'
+        copyright: 'Copyright Haahr Law Group 2021. All Rights Reserved',
+        demo: 'Demo build · Not the live firm site',
+        signature: 'Made with ♥ by Hashtag Creative'
       },
       banner: {
         text: 'Demonstration site · Static rebuild for portfolio review · Not affiliated with Haahr Law Group'
@@ -224,6 +226,7 @@
         },
         bandTitle: 'Reciba una Consulta Sin Costo Hoy',
         bandCTA: 'HABLEMOS',
+        bandCTA2: 'COMENCEMOS',
         intro: {
           eyebrow: 'Disputas y Litigios de Seguros',
           title: 'Un bufete boutique con un solo principio: el asegurado.',
@@ -343,8 +346,9 @@
         follow: 'Síganos',
         adv: 'La contratación de un abogado es una decisión importante que no debe basarse únicamente en publicidad. Antes de decidir, pida al bufete información gratuita por escrito sobre sus calificaciones y experiencia.',
         legal: 'Aviso Legal',
-        copyright: '© 2026 Haahr Law Group. Todos los derechos reservados.',
-        demo: 'Versión demo · No es el sitio oficial del bufete'
+        copyright: 'Copyright Haahr Law Group 2021. Todos los derechos reservados',
+        demo: 'Versión demo · No es el sitio oficial del bufete',
+        signature: 'Hecho con ♥ por Hashtag Creative'
       },
       banner: {
         text: 'Sitio de demostración · Reconstrucción estática para revisión de portafolio · No afiliado con Haahr Law Group'
@@ -398,6 +402,7 @@
         },
         bandTitle: 'Obtenez une Consultation Sans Frais Aujourd'hui',
         bandCTA: 'PARLONS-EN',
+        bandCTA2: 'COMMENÇONS',
         intro: {
           eyebrow: 'Litiges & Contentieux d\'Assurance',
           title: 'Un cabinet boutique fondé sur un seul principe : l\'assuré.',
@@ -517,8 +522,9 @@
         follow: 'Suivez-nous',
         adv: 'L\'embauche d\'un avocat est une décision importante qui ne devrait pas reposer uniquement sur la publicité. Avant de décider, demandez au cabinet de vous envoyer gratuitement des informations écrites sur ses qualifications et son expérience.',
         legal: 'Avis Juridique',
-        copyright: '© 2026 Haahr Law Group. Tous droits réservés.',
-        demo: 'Version démo · Pas le site officiel du cabinet'
+        copyright: 'Copyright Haahr Law Group 2021. Tous droits réservés',
+        demo: 'Version démo · Pas le site officiel du cabinet',
+        signature: 'Fait avec ♥ par Hashtag Creative'
       },
       banner: {
         text: 'Site de démonstration · Reconstruction statique pour évaluation de portfolio · Non affilié à Haahr Law Group'
@@ -553,6 +559,8 @@
         el.setAttribute(attr, val);
       } else if (Array.isArray(val)) {
         // unused: arrays are handled via callbacks below
+      } else if (typeof val === 'string' && val.indexOf('<') !== -1) {
+        el.innerHTML = val;
       } else {
         el.textContent = val;
       }

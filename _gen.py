@@ -39,7 +39,7 @@ SHELL_HEAD = """<!doctype html>
   <nav class="main-nav" id="primary-nav" aria-label="Primary"><ul>
     <li><a href="/" data-i18n="nav.home">Home</a></li>
     <li><a href="/about.html" data-i18n="nav.about">About</a></li>
-    <li class="has-dropdown"><a href="/services.html"{services_current} data-i18n="nav.services">What We Do</a>
+    <li class="has-dropdown"><a href="/services/"{services_current} data-i18n="nav.services">What We Do</a>
       <div class="dropdown" role="menu">
         <a href="/services/auto.html" data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
         <a href="/services/fire.html" data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
@@ -48,7 +48,7 @@ SHELL_HEAD = """<!doctype html>
         <a href="/services/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
         <a href="/services/water.html" data-i18n="nav.services_dropdown.water">Water Damage</a>
       </div></li>
-    <li><a href="/blog.html"{blog_current} data-i18n="nav.blog">Blog</a></li>
+    <li><a href="/blog/"{blog_current} data-i18n="nav.blog">Blog</a></li>
     <li><a href="/contact.html"{contact_current} data-i18n="nav.contact">Contact</a></li>
   </ul></nav>
 </div></header>
@@ -174,7 +174,7 @@ PRACTICE = {
 PRACTICE_BODY = """
 <section class="page-header">
   <div class="container">
-    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/services.html" data-i18n="services.title">What We Do</a> · <span data-i18n="services_v.{i18n}H">{title}</span></p>
+    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/services/" data-i18n="services.title">What We Do</a> · <span data-i18n="services_v.{i18n}H">{title}</span></p>
     <h1 data-i18n="services_v.{i18n}H">{title}</h1>
   </div>
 </section>
@@ -197,7 +197,7 @@ PRACTICE_BODY = """
           <p>{tq}</p>
           <span class="who">— {who}</span>
         </div>
-        <p class="mt-3"><a href="/services.html" data-i18n="practice.backToServices">← All practice areas</a></p>
+        <p class="mt-3"><a href="/services/" data-i18n="practice.backToServices">← All practice areas</a></p>
       </div>
       <aside class="rail">
         <h4 data-i18n="practice.relatedTitle">Our Services</h4>
@@ -331,7 +331,7 @@ POSTS = [
 POST_BODY = """
 <section class="page-header">
   <div class="container">
-    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/blog.html" data-i18n="nav.blog">Blog</a> · <span>{tag}</span></p>
+    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <span>{tag}</span></p>
     <h1>{title}</h1>
     <p style="color:var(--muted);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;">{date} · <span class="tag">{tag}</span></p>
   </div>
@@ -362,8 +362,8 @@ POST_BODY = """
         <div class="rail mt-3" style="margin-top:1rem;">
           <h4 data-i18n="blog.topicsTitle">Topics</h4>
           <ul>
-            <li><a href="/blog.html">Tips</a></li>
-            <li><a href="/blog.html">Community</a></li>
+            <li><a href="/blog/">Tips</a></li>
+            <li><a href="/blog/">Community</a></li>
           </ul>
         </div>
       </aside>

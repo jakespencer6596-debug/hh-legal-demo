@@ -17,29 +17,16 @@
 <a class="skip-link" href="#main">Skip to main content</a>
 <div class="demo-banner" data-i18n="banner.text">Demonstration site · Static rebuild for portfolio review · Not affiliated with Haahr Law Group</div>
 
-<div class="utility-bar"><div class="container">
-  <a class="phone" href="tel:+17278967777" data-i18n="util.phone">(727) 896-7777</a>
-  <div class="toolbar" role="toolbar" aria-label="Site preferences">
-    <span class="label" data-i18n="toolbar.lang">Language</span>
-    <div class="group" role="group" aria-label="Language">
-      <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
-      <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-      <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+<div class="utility-bar">
+  <div class="container">
+    <a class="phone" href="tel:+17278967777" data-i18n="util.phone">(727) 896-7777</a>
+    <div class="pref-cluster" role="group" aria-label="Site preferences">
+      <button id="lang-cycle" class="pref-btn" type="button" aria-label="Language: EN. Click to cycle." title="Language — click to cycle">EN</button>
+      <button id="theme-cycle" class="pref-btn" type="button" aria-label="Light mode (click for dark)" title="Light mode — click for dark">☀</button>
+      <button id="text-cycle" class="pref-btn" type="button" aria-label="Text size: A. Click to cycle." title="Text size — click to cycle">A</button>
     </div>
-    <span class="label" data-i18n="toolbar.theme">Theme</span>
-    <div class="group" role="group" aria-label="Color theme">
-      <button data-theme-set="light"  data-i18n-attr="aria-label" data-i18n="toolbar.themeLight"  aria-label="Light theme">☀</button>
-      <button data-theme-set="system" data-i18n-attr="aria-label" data-i18n="toolbar.themeSystem" aria-label="System theme">◐</button>
-      <button data-theme-set="dark"   data-i18n-attr="aria-label" data-i18n="toolbar.themeDark"   aria-label="Dark theme">☾</button>
-    </div>
-    <span class="label" data-i18n="toolbar.size">Text Size</span>
-    <div class="group" role="group" aria-label="Text size">
-      <button data-size="normal" data-i18n-attr="aria-label" data-i18n="toolbar.sizeNormal" aria-label="Normal text">A</button>
-      <button data-size="large"  data-i18n-attr="aria-label" data-i18n="toolbar.sizeLarge"  aria-label="Larger text">A+</button>
-      <button data-size="xlarge" data-i18n-attr="aria-label" data-i18n="toolbar.sizeXL"     aria-label="Largest text">A++</button>
-    </div>
-    </div>
-</div></div>
+  </div>
+</div>
 
 <header class="site-header"><div class="container">
   <a class="brand" href="/"><span class="mark img"><img src="/images/correctREDhlg.png" alt="HLG"></span><span class="word">Haahr Law Group<small>Tampa Bay · St. Petersburg</small></span></a>

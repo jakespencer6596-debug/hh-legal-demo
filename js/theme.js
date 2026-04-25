@@ -1,46 +1,36 @@
-/* HH Legal demo — theme switcher (Light / System / Dark) */
+/* HH Legal demo — theme: binary toggle (light/dark) with sun/moon icon */
 (function () {
   const root = document.documentElement;
-  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+  const SUN = '☀';   // ☀
+  const MOON = '☾';  // ☾
 
-  function effective(pref) {
-    if (pref === 'system' || !pref) return mq.matches ? 'dark' : 'light';
-    return pref;
-  }
-
-  function apply(pref) {
-    if (!['light', 'dark', 'system'].includes(pref)) pref = 'system';
-    root.setAttribute('data-theme', effective(pref));
-    try {
-      if (pref === 'system') localStorage.removeItem('theme');
-      else localStorage.setItem('theme', pref);
-    } catch (e) {}
-    document.querySelectorAll('[data-theme-set]').forEach(b => {
-      const myPref = b.dataset.themeSet;
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      const current = saved || 'system';
-      b.setAttribute('aria-pressed', String(myPref === current));
-    });
-  }
-
-  // Re-evaluate when system theme changes (only matters when in 'system' mode)
-  mq.addEventListener('change', () => {
+  function current() {
     let saved = null;
     try { saved = localStorage.getItem('theme'); } catch (e) {}
-    if (!saved) apply('system');
-  });
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function apply(theme) {
+    if (theme !== 'light' && theme !== 'dark') theme = 'light';
+    root.setAttribute('data-theme', theme);
+    try { localStorage.setItem('theme', theme); } catch (e) {}
+    const btn = document.getElementById('theme-cycle');
+    if (btn) {
+      btn.textContent = theme === 'dark' ? MOON : SUN;
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Dark mode (click for light)' : 'Light mode (click for dark)');
+      btn.setAttribute('title', theme === 'dark' ? 'Dark mode — click for light' : 'Light mode — click for dark');
+    }
+  }
+
+  function toggle() {
+    apply(current() === 'dark' ? 'light' : 'dark');
+  }
 
   function init() {
-    document.querySelectorAll('[data-theme-set]').forEach(btn =>
-      btn.addEventListener('click', () => apply(btn.dataset.themeSet))
-    );
-    // Re-apply once to set aria-pressed correctly (pre-paint script set the html attr already)
-    let saved = null;
-    try { saved = localStorage.getItem('theme'); } catch (e) {}
-    apply(saved || 'system');
-
-    // Enable transitions only after initial paint
+    apply(current());
+    const btn = document.getElementById('theme-cycle');
+    if (btn) btn.addEventListener('click', toggle);
     requestAnimationFrame(() => root.classList.add('theme-transitions'));
   }
 
@@ -49,4 +39,7 @@
   } else {
     init();
   }
+
+  window.HHLegal = window.HHLegal || {};
+  window.HHLegal.toggleTheme = toggle;
 })();

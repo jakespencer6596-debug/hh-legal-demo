@@ -160,12 +160,14 @@ ul, ol { padding-left: 1.25rem; }
 @media (min-width: 960px)  { .row.cols-4 { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 960px)  { .row.sidebar { grid-template-columns: 2fr 1fr; gap: 3rem; } }
 
-/* ---------- Top utility bar (mirrors live: tiny phone-only centered row) ---------- */
+/* ---------- Top utility bar — phone centered, pref cluster pinned right ---------- */
 .utility-bar {
   background: #F8F4F0;
   color: var(--accent);
   font-size: .82rem;
   border-bottom: 1px solid #EFEAE4;
+  position: relative;             /* for sticky overlay header on home */
+  z-index: 5;
 }
 .utility-bar .container {
   display: flex;
@@ -174,7 +176,8 @@ ul, ol { padding-left: 1.25rem; }
   gap: 1rem;
   padding-top: .35rem;
   padding-bottom: .35rem;
-  position: relative;             /* for absolute positioning of accessibility cog */
+  position: relative;             /* anchor for .pref-cluster (absolute) */
+  min-height: 38px;
 }
 .utility-bar a { color: var(--accent); text-decoration: none; }
 .utility-bar a:hover { color: var(--brand-red-hover); }
@@ -182,64 +185,45 @@ ul, ol { padding-left: 1.25rem; }
 .utility-bar .phone::before { content: "☎ "; margin-right: .25rem; }
 [data-theme="dark"] .utility-bar { background: var(--bg-alt); color: var(--accent); border-color: var(--border); }
 [data-theme="dark"] .utility-bar a { color: var(--accent); }
+@media (max-width: 540px) {
+  .utility-bar .container { padding-right: calc(var(--pad-x) + 130px); }   /* leave room for cluster */
+}
 
-/* Accessibility cog — pinned to the right of the utility row */
-.a11y-cog {
+/* Cycling preference buttons — pinned to the right of the utility row */
+.pref-cluster {
   position: absolute;
   right: var(--pad-x);
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
-  border: 0;
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--accent);
-  padding: .15rem .35rem;
-  border-radius: 4px;
-  line-height: 1;
-}
-.a11y-cog:hover { background: rgba(216,8,8,.08); }
-.a11y-cog[aria-expanded="true"] { background: rgba(216,8,8,.12); }
-
-/* Accessibility panel — floats below the cog */
-.a11y-panel {
-  position: absolute;
-  right: var(--pad-x);
-  top: calc(100% + 6px);
-  z-index: 100;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  box-shadow: var(--shadow-md);
-  padding: 1rem;
-  display: none;
-  min-width: 280px;
-}
-.a11y-panel.open { display: block; }
-.a11y-panel .row { display: flex; align-items: center; gap: .5rem; margin-bottom: .65rem; }
-.a11y-panel .row:last-child { margin-bottom: 0; }
-.a11y-panel .label {
-  font-size: .68rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  width: 70px;
-  flex-shrink: 0;
-}
-[data-theme="dark"] .a11y-panel { background: var(--surface); }
-
-/* ---------- Toolbar (lang / theme / text-size) — used inside .a11y-panel ---------- */
-.toolbar {
-  display: contents;
-}
-.toolbar .group {
   display: inline-flex;
   align-items: center;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 2px;
-  background: var(--bg);
+  gap: .35rem;
 }
+.pref-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid rgba(216, 8, 8, .25);
+  color: var(--accent);
+  font: inherit;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  width: 28px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.pref-btn:hover { background: rgba(216, 8, 8, .08); border-color: var(--accent); }
+.pref-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[data-theme="dark"] .pref-btn { color: var(--accent); border-color: rgba(255,85,102,.35); }
+[data-theme="dark"] .pref-btn:hover { background: rgba(255,85,102,.1); }
+
+/* (legacy toolbar styles removed — superseded by .pref-cluster) */
+.toolbar, .toolbar .group, .toolbar button, .toolbar .label { display: none !important; }
 .toolbar button {
   appearance: none;
   background: transparent;
@@ -285,10 +269,9 @@ body.home .site-header {
   position: absolute;
   left: 0; right: 0;
   top: var(--utility-bar-height, 32px);
-  background: rgba(60, 60, 60, .6);
+  background: rgba(80, 80, 85, .42);  /* live: lighter, neutral, more translucent */
   border-bottom: 0;
   box-shadow: none;
-  backdrop-filter: blur(2px);
 }
 body.home .site-header .brand .word { color: #fff; }
 body.home .site-header .brand .word small { color: rgba(255,255,255,.65); }
@@ -507,27 +490,18 @@ body.home .hero { margin-top: 0; }        /* hero starts immediately under heade
 .hero {
   position: relative;
   background-image: url('/images/hans_haahr.jpg');
-  background-size: auto 110%;
+  background-size: contain;       /* fit the image naturally, no zoom */
   background-position: right center;
   background-repeat: no-repeat;
-  background-color: #F5F2EE;
+  background-color: #fff;          /* match live: white left side */
   color: var(--text);
   padding: 0;
   overflow: hidden;
   min-height: 78vh;
-  margin-top: -1px;
+  margin-top: 0;
 }
-@media (min-width: 1400px) {
-  .hero { background-size: auto 105%; }
-}
-.hero::before {
-  /* soft white-to-transparent gradient on the left so text is readable */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,.92) 0%, rgba(255,255,255,.78) 35%, rgba(255,255,255,.05) 65%, rgba(255,255,255,0) 100%);
-  pointer-events: none;
-}
+/* No overlay gradient — live shows the photo as-is on its right; left is plain white */
+.hero::before { content: none; }
 .hero .container {
   position: relative;
   display: grid;
@@ -540,11 +514,9 @@ body.home .hero { margin-top: 0; }        /* hero starts immediately under heade
 }
 @media (max-width: 880px) {
   .hero {
+    background-size: cover;
     background-position: 70% center;
     min-height: auto;
-  }
-  .hero::before {
-    background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(255,255,255,.85) 60%, rgba(255,255,255,.6) 100%);
   }
   .hero .container { grid-template-columns: 1fr; min-height: auto; padding-top: 3rem; padding-bottom: 3rem; }
 }

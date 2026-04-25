@@ -10,29 +10,6 @@
       });
     }
 
-    // Accessibility cog popover (lang/theme/size moved here to mirror live's tiny utility row)
-    const cog = document.querySelector('.a11y-cog');
-    const panel = document.querySelector('.a11y-panel');
-    if (cog && panel) {
-      cog.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const open = panel.classList.toggle('open');
-        cog.setAttribute('aria-expanded', String(open));
-      });
-      document.addEventListener('click', (e) => {
-        if (!panel.contains(e.target) && e.target !== cog) {
-          panel.classList.remove('open');
-          cog.setAttribute('aria-expanded', 'false');
-        }
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          panel.classList.remove('open');
-          cog.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
-
     // Back-to-top floating button
     const btt = document.getElementById('back-to-top');
     if (btt) {

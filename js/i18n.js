@@ -544,11 +544,27 @@
     return key.split('.').reduce((o, k) => (o && k in o) ? o[k] : undefined, dict);
   }
 
+  const LANG_LABEL = { en: 'EN', es: 'ES', fr: 'FR' };
+
+  function cycleLang() {
+    let cur = 'en';
+    try { cur = localStorage.getItem('lang') || 'en'; } catch (e) {}
+    const idx = LANGS.indexOf(cur);
+    const next = LANGS[(idx + 1) % LANGS.length];
+    applyLang(next);
+  }
+
   function applyLang(lang) {
     if (!LANGS.includes(lang)) lang = 'en';
     const dict = DICT[lang];
-    document.documentElement.lang = (lang === 'ht') ? 'ht' : lang;
+    document.documentElement.lang = lang;
     try { localStorage.setItem('lang', lang); } catch (e) {}
+    const cycleBtn = document.getElementById('lang-cycle');
+    if (cycleBtn) {
+      cycleBtn.textContent = LANG_LABEL[lang];
+      cycleBtn.setAttribute('aria-label', `Language: ${LANG_LABEL[lang]}. Click to cycle.`);
+      cycleBtn.setAttribute('title', `Language: ${LANG_LABEL[lang]} — click to cycle`);
+    }
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -609,9 +625,8 @@
     }
     applyLang(initial);
 
-    document.querySelectorAll('.lang-btn').forEach(btn =>
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang))
-    );
+    const cycleBtn = document.getElementById('lang-cycle');
+    if (cycleBtn) cycleBtn.addEventListener('click', cycleLang);
   }
 
   if (document.readyState === 'loading') {
@@ -623,5 +638,6 @@
   // Expose for debugging
   window.HHLegal = window.HHLegal || {};
   window.HHLegal.applyLang = applyLang;
+  window.HHLegal.cycleLang = cycleLang;
   window.HHLegal.dict = DICT;
 })();

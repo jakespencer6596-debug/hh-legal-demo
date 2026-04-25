@@ -619,27 +619,24 @@ ul, ol { padding-left: 1.25rem; }
 .card .card-link::after { content: " →"; transition: transform .2s ease; display: inline-block; }
 .card .card-link:hover::after { transform: translateX(4px); }
 
-/* Service card */
+/* Service card — live: red H5 title, no icon */
 .service-card {
   position: relative;
   overflow: hidden;
-  padding-top: 1.4rem;
+  padding: 2rem 1.6rem;
+  text-align: left;
 }
-.service-card .icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  background: var(--brand-red-soft);
+.service-card .icon { display: none; }
+.service-card h3, .service-card h5 {
   color: var(--accent);
-  display: grid;
-  place-items: center;
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
 }
-[data-theme="dark"] .service-card .icon {
-  background: rgba(255,85,102,.16);
-  color: var(--accent);
-}
+.service-card p { color: var(--text); }
+.service-card .card-link { color: var(--accent); }
 
 /* Team row (2-col, used on About page to mirror live) */
 .team-row {
@@ -692,14 +689,21 @@ ul, ol { padding-left: 1.25rem; }
 
 /* Blog post card */
 .post-card { padding: 0; overflow: hidden; }
-.post-card .thumb {
-  height: 180px;
+.post-card .thumb,
+.post-card .thumb-link {
+  display: block;
+  height: 200px;
   background: linear-gradient(135deg, var(--brand-red-hover), var(--ink));
-  display: grid;
-  place-items: center;
-  color: rgba(255,255,255,.85);
-  font-size: 2.2rem;
+  overflow: hidden;
 }
+.post-card .thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.post-card .thumb-link:hover .thumb-img { transform: scale(1.04); }
 .post-card .body { padding: 1.4rem 1.6rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
 .post-card .meta {
   font-size: .78rem;

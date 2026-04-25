@@ -12,10 +12,10 @@ SHELL_HEAD = """<!doctype html>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title} — Haahr Law Group</title>
   <meta name="description" content="{desc}">
-  <script src="/assets/js/preload.js"></script>
+  <script src="/js/preload.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B81429'/%3E%3Ctext x='16' y='22' font-family='Montserrat,Arial,sans-serif' font-size='16' font-weight='800' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -39,16 +39,16 @@ SHELL_HEAD = """<!doctype html>
   <nav class="main-nav" id="primary-nav" aria-label="Primary"><ul>
     <li><a href="/" data-i18n="nav.home">Home</a></li>
     <li><a href="/about.html" data-i18n="nav.about">About</a></li>
-    <li class="has-dropdown"><a href="/services/"{services_current} data-i18n="nav.services">What We Do</a>
+    <li class="has-dropdown"><a href="/services.html"{services_current} data-i18n="nav.services">What We Do</a>
       <div class="dropdown" role="menu">
-        <a href="/services/auto.html" data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
-        <a href="/services/fire.html" data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
-        <a href="/services/storm.html" data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
-        <a href="/services/roof.html" data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
-        <a href="/services/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
-        <a href="/services/water.html" data-i18n="nav.services_dropdown.water">Water Damage</a>
+        <a href="/auto.html" data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
+        <a href="/fire.html" data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
+        <a href="/storm.html" data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
+        <a href="/roof.html" data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
+        <a href="/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
+        <a href="/water.html" data-i18n="nav.services_dropdown.water">Water Damage</a>
       </div></li>
-    <li><a href="/blog/"{blog_current} data-i18n="nav.blog">Blog</a></li>
+    <li><a href="/blog.html"{blog_current} data-i18n="nav.blog">Blog</a></li>
     <li><a href="/contact.html"{contact_current} data-i18n="nav.contact">Contact</a></li>
   </ul></nav>
 </div></header>
@@ -83,10 +83,10 @@ SHELL_FOOT = """
   </div>
 </div></footer>
 
-<script src="/assets/js/i18n.js"></script>
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/text-size.js"></script>
-<script src="/assets/js/nav.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/text-size.js"></script>
+<script src="/js/nav.js"></script>
 </body></html>
 """
 
@@ -174,7 +174,7 @@ PRACTICE = {
 PRACTICE_BODY = """
 <section class="page-header">
   <div class="container">
-    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/services/" data-i18n="services.title">What We Do</a> · <span data-i18n="services_v.{i18n}H">{title}</span></p>
+    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/services.html" data-i18n="services.title">What We Do</a> · <span data-i18n="services_v.{i18n}H">{title}</span></p>
     <h1 data-i18n="services_v.{i18n}H">{title}</h1>
   </div>
 </section>
@@ -197,17 +197,17 @@ PRACTICE_BODY = """
           <p>{tq}</p>
           <span class="who">— {who}</span>
         </div>
-        <p class="mt-3"><a href="/services/" data-i18n="practice.backToServices">← All practice areas</a></p>
+        <p class="mt-3"><a href="/services.html" data-i18n="practice.backToServices">← All practice areas</a></p>
       </div>
       <aside class="rail">
         <h4 data-i18n="practice.relatedTitle">Our Services</h4>
         <ul>
-          <li><a href="/services/auto.html"{c_auto}     data-i18n="nav.services_dropdown.auto">Automotive Claims</a></li>
-          <li><a href="/services/fire.html"{c_fire}     data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a></li>
-          <li><a href="/services/storm.html"{c_storm}    data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a></li>
-          <li><a href="/services/roof.html"{c_roof}     data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a></li>
-          <li><a href="/services/sinkhole.html"{c_sinkhole} data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a></li>
-          <li><a href="/services/water.html"{c_water}    data-i18n="nav.services_dropdown.water">Water Damage</a></li>
+          <li><a href="/auto.html"{c_auto}     data-i18n="nav.services_dropdown.auto">Automotive Claims</a></li>
+          <li><a href="/fire.html"{c_fire}     data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a></li>
+          <li><a href="/storm.html"{c_storm}    data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a></li>
+          <li><a href="/roof.html"{c_roof}     data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a></li>
+          <li><a href="/sinkhole.html"{c_sinkhole} data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a></li>
+          <li><a href="/water.html"{c_water}    data-i18n="nav.services_dropdown.water">Water Damage</a></li>
         </ul>
       </aside>
     </div>
@@ -331,7 +331,7 @@ POSTS = [
 POST_BODY = """
 <section class="page-header">
   <div class="container">
-    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/blog/" data-i18n="nav.blog">Blog</a> · <span>{tag}</span></p>
+    <p class="breadcrumbs"><a href="/" data-i18n="about.crumbHome">Home</a> · <a href="/blog.html" data-i18n="nav.blog">Blog</a> · <span>{tag}</span></p>
     <h1>{title}</h1>
     <p style="color:var(--muted);font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;">{date} · <span class="tag">{tag}</span></p>
   </div>
@@ -362,8 +362,8 @@ POST_BODY = """
         <div class="rail mt-3" style="margin-top:1rem;">
           <h4 data-i18n="blog.topicsTitle">Topics</h4>
           <ul>
-            <li><a href="/blog/">Tips</a></li>
-            <li><a href="/blog/">Community</a></li>
+            <li><a href="/blog.html">Tips</a></li>
+            <li><a href="/blog.html">Community</a></li>
           </ul>
         </div>
       </aside>
@@ -381,7 +381,7 @@ for i, post in enumerate(POSTS):
         if j == i:
             continue
         cur = ' aria-current="page"' if False else ''
-        recent_html += f'<li><a href="/blog/{other["slug"]}.html"{cur}>{other["title"]}</a></li>'
+        recent_html += f'<li><a href="/blog.html{other["slug"]}.html"{cur}>{other["title"]}</a></li>'
     body = POST_BODY.format(
         title=post['title'], date=post['date'], tag=post['tag'],
         lead=post['lead'], sections=sections_html, solution=post['solution'],
@@ -405,7 +405,7 @@ for p in POSTS:
     <div class="meta">{p["date"]} · <span class="tag">{p["tag"]}</span></div>
     <h4>{p["title"]}</h4>
     <p>{p["lead"][:160]}</p>
-    <a class="card-link" href="/blog/{p["slug"]}.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/blog.html{p["slug"]}.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>'''
 

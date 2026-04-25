@@ -1,10 +1,13 @@
 /* HH Legal demo — i18n
    Hand-rolled dictionary + data-i18n attribute switcher.
-   Languages: en (default), es (Spanish), ht (Haitian Creole).
-   Brief recommended HT over FR for the Tampa Bay market.
+   Languages: en (default), es (Spanish), fr (French).
+   NOTE: Per the research dossier, Tampa Bay's Tampa-Bay-region non-English
+   population is overwhelmingly Spanish + Haitian Creole. Haitian Creole (HT)
+   would likely outperform French (FR) for local market reach. See NOTES.md.
+   Spanish and French copy is machine-translated and needs attorney review.
 */
 (function () {
-  const LANGS = ['en', 'es', 'ht'];
+  const LANGS = ['en', 'es', 'fr'];
 
   const DICT = {
     en: {
@@ -38,11 +41,11 @@
       },
       home: {
         hero: {
-          eyebrow: 'Tampa Bay Insurance Litigation',
-          title: 'When the insurance company says no, we say not so fast.',
-          lead: 'Haahr Law Group represents Florida policyholders against insurance carriers on property, fire, hurricane, roof, sinkhole and water-damage claims. Over fifteen years on your side of the table.',
-          ctaPrimary: 'Free Consultation',
-          ctaSecondary: 'About the Firm'
+          eyebrow: 'Insurance Claims Litigation · Tampa Bay',
+          title: 'HAAHR LAW GROUP',
+          lead: 'Our insurance attorneys proudly represent policyholders in a wide variety of insurance disputes and have successfully litigated cases arising out of both commercial and personal lines policies.',
+          ctaPrimary: 'CONSULTATION',
+          ctaSecondary: 'ABOUT HLG'
         },
         bandTitle: 'Get a no-cost case review today',
         bandCTA: "Let's Talk",
@@ -212,11 +215,11 @@
       },
       home: {
         hero: {
-          eyebrow: 'Litigación de Seguros · Tampa Bay',
-          title: 'Cuando la aseguradora dice no, nosotros decimos no tan rápido.',
-          lead: 'Haahr Law Group representa a asegurados de Florida frente a las aseguradoras en reclamos de propiedad, incendio, huracán, techo, hundimientos y daños por agua. Más de quince años defendiendo su lado de la mesa.',
-          ctaPrimary: 'Consulta Gratuita',
-          ctaSecondary: 'Sobre el Bufete'
+          eyebrow: 'Litigación de Reclamos de Seguros · Tampa Bay',
+          title: 'HAAHR LAW GROUP',
+          lead: 'Nuestros abogados de seguros representan con orgullo a asegurados en una amplia variedad de disputas, y han litigado con éxito casos derivados de pólizas tanto comerciales como personales.',
+          ctaPrimary: 'CONSULTA',
+          ctaSecondary: 'SOBRE HLG'
         },
         bandTitle: 'Reciba una evaluación de su caso sin costo',
         bandCTA: 'Hablemos',
@@ -355,177 +358,177 @@
       }
     },
 
-    ht: {
-      meta: { langName: 'Kreyòl Ayisyen' },
-      util: { phone: '(727) 896-7777', cta: 'Konsiltasyon Gratis' },
+    fr: {
+      meta: { langName: 'Français' },
+      util: { phone: '(727) 896-7777', cta: 'Consultation Gratuite' },
       nav: {
-        home: 'Akèy',
-        about: 'Kiyès Nou Ye',
-        services: 'Sa Nou Fè',
+        home: 'Accueil',
+        about: 'À Propos',
+        services: 'Nos Services',
         blog: 'Blog',
-        contact: 'Kontak',
+        contact: 'Contact',
         services_dropdown: {
-          auto: 'Reklamasyon Otomobil',
-          fire: 'Domaj Dife & Lafimen',
-          storm: 'Siklòn & Tanpèt',
-          roof: 'Twati & Lagrèl',
-          sinkhole: 'Tè ki Tonbe (Sinkhole)',
-          water: 'Domaj Dlo'
+          auto: 'Sinistres Automobile',
+          fire: 'Dégâts Incendie & Fumée',
+          storm: 'Ouragan & Tempête',
+          roof: 'Toiture & Grêle',
+          sinkhole: 'Affaissement de Terrain',
+          water: 'Dégâts des Eaux'
         }
       },
       toolbar: {
-        lang: 'Lang',
-        theme: 'Tèm',
-        size: 'Gwosè Tèks',
-        themeLight: 'Tèm klè',
-        themeSystem: 'Tèm sistèm',
-        themeDark: 'Tèm fonse',
-        sizeNormal: 'Gwosè nòmal',
-        sizeLarge: 'Gwosè pi gran',
-        sizeXL: 'Pi gwo gwosè'
+        lang: 'Langue',
+        theme: 'Thème',
+        size: 'Taille du Texte',
+        themeLight: 'Thème clair',
+        themeSystem: 'Thème système',
+        themeDark: 'Thème sombre',
+        sizeNormal: 'Taille normale',
+        sizeLarge: 'Taille agrandie',
+        sizeXL: 'Taille maximale'
       },
       home: {
         hero: {
-          eyebrow: 'Litijasyon Asirans · Tampa Bay',
-          title: 'Lè konpayi asirans la di non, nou di pa kounye a.',
-          lead: 'Haahr Law Group reprezante asire Florid yo kont konpayi asirans nan reklamasyon byen, dife, siklòn, twati, sinkhole ak domaj dlo. Plis pase kenz ane sou bò pa w nan tab la.',
-          ctaPrimary: 'Konsiltasyon Gratis',
-          ctaSecondary: 'Sou Kabinè a'
+          eyebrow: 'Contentieux Sinistres d\'Assurance · Tampa Bay',
+          title: 'HAAHR LAW GROUP',
+          lead: 'Nos avocats en droit des assurances représentent fièrement les assurés dans une grande variété de litiges, et ont mené avec succès des dossiers issus de polices commerciales comme personnelles.',
+          ctaPrimary: 'CONSULTATION',
+          ctaSecondary: 'À PROPOS HLG'
         },
-        bandTitle: 'Resevwa yon revizyon dosye gratis jodi a',
-        bandCTA: 'Ann Pale',
+        bandTitle: 'Obtenez une évaluation de votre dossier sans frais',
+        bandCTA: 'Parlons-en',
         intro: {
-          eyebrow: 'Diskisyon ak Litijasyon Asirans',
-          title: 'Yon kabinè boutik bati sou yon sèl prensip: asire a.',
-          p1: 'Nou litije reklamasyon byen premye-pati nan tribinal eta ak federal atravè Florid — soti nan reparasyon otomobil ki pa peye ase ak reklamasyon siklòn ki refize, jiska envestigasyon dife pèt total ak diskisyon konplèks sou sinkhole.',
-          p2: 'Konpayi asirans yo konnen lwa yo. Nou tou. Nou envoke Lwa Polis Valè Florid la, dispozisyon ranplasman konplè pou kòd konstriksyon, ak ankadreman §627.706 la pou sinkhole lè reyalite yo sipòte sa — epi nou pa janm chaje frè si nou pa rekipere.',
-          cta: 'Aprann Plis'
+          eyebrow: 'Litiges & Contentieux d\'Assurance',
+          title: 'Un cabinet boutique fondé sur un seul principe : l\'assuré.',
+          p1: 'Nous traitons les sinistres de première partie devant les tribunaux d\'État et fédéraux de Floride — des réparations automobiles sous-évaluées et sinistres d\'ouragan refusés aux investigations d\'incendie pour perte totale et litiges complexes d\'affaissement.',
+          p2: 'Les assureurs connaissent les statuts. Nous aussi. Nous invoquons la Valued Policy Law de Floride, les dispositions de remplacement intégral imposées par le code du bâtiment et le cadre §627.706 sur les affaissements lorsque les faits le justifient — et nous ne facturons aucun honoraire sauf en cas de récupération.',
+          cta: 'En Savoir Plus'
         },
         services: {
-          eyebrow: 'Sa Nou Fè',
-          title: 'Sis domèn pratik prensipal — sou reklamasyon ki pi konteste nan Florid'
+          eyebrow: 'Nos Services',
+          title: 'Six domaines de pratique — autour des sinistres les plus contestés en Floride'
         },
         about: {
-          title: 'Sou Haahr Law Group',
-          p1: 'Fonde an 2007 pa Hans Peter Haahr, kabinè nou nan St. Petersburg konsantre sou reprezante pwopriyetè kay ak ti biznis Tampa Bay yo kont konpayi asirans ki retade, refize oswa peye mwens reklamasyon lejitim.',
-          p2: 'Boutik dapre konsepsyon. Chak ka jere dirèkteman pa avoka a — pa pase nan yon asosye junior oswa yon mil rezolisyon nan sant apèl.',
-          tagline: 'Nou nan kote ou.',
-          ctaTeam: 'Rankontre Ekip la'
+          title: 'À Propos de Haahr Law Group',
+          p1: 'Fondé en 2007 par Hans Peter Haahr, notre cabinet de St. Petersburg se consacre à représenter les propriétaires et petites entreprises de Tampa Bay face aux assureurs qui retardent, refusent ou sous-évaluent des sinistres légitimes.',
+          p2: 'Boutique par conception. Chaque dossier est traité directement par l\'avocat — aucun renvoi à un associé junior ni à une chaîne de centres d\'appels.',
+          tagline: 'Nous sommes de votre côté.',
+          ctaTeam: 'Rencontrez l\'Équipe'
         },
         team: {
-          title: 'Rankontre ekip la',
-          hans: { name: 'Hans Peter Haahr', role: 'Avoka · Fondatè' },
-          staci: { name: 'Staci Haahr', role: 'Manadjè Biznis' },
-          lina: { name: 'Lina Rodriguez', role: 'Paralegal' }
+          title: 'Rencontrez l\'équipe',
+          hans: { name: 'Hans Peter Haahr', role: 'Avocat · Fondateur' },
+          staci: { name: 'Staci Haahr', role: 'Directrice Administrative' },
+          lina: { name: 'Lina Rodriguez', role: 'Assistante Juridique' }
         },
         blog: {
-          title: 'Nouvo nan blog HLG',
-          cta: 'Li blog la'
+          title: 'Nouveautés du blog HLG',
+          cta: 'Lire le blog'
         },
         stats: {
-          years: 'Ane nan pratik',
-          areas: 'Domèn pratik',
-          courts: 'Tribinal admisib',
-          fee: 'Konsiltasyon san frè'
+          years: 'Années d\'exercice',
+          areas: 'Domaines de pratique',
+          courts: 'Cours admises',
+          fee: 'Consultation sans frais'
         }
       },
       about: {
-        title: 'Kiyès Nou Ye',
-        crumbHome: 'Akèy',
-        firmTitle: 'Sou kabinè a',
-        firmP1: 'Haahr Law Group, PL se yon kabinè litijasyon ki baze nan St. Petersburg fonde an 2007 pa Hans Peter Haahr pou bay pwopriyetè kay Tampa Bay yo yon litigan seryo sou bò pa yo nan tab reklamasyon byen yo.',
-        firmP2: 'Nou admisib pou pratike devan Florid ak Tennessee bars yo, Tribinal Distrik US pou Distrik Mwayen ak Sid Florid, ak Tribinal US Reklamasyon Federal nan Washington, D.C.',
-        firmP3: 'Estrikti boutik nou enpòtan. Kliyan yo travay dirèkteman ak avoka yo soti nan akeyi rive nan rezolisyon. Pa gen okenn pase nan asosye, pa gen okenn jiskontè junior, pa gen okenn triyaj nan sant apèl.',
-        firmP4: 'Nou aksepte ka atravè Florid e nou vwayaje regilyèman nan konte Pinellas, Hillsborough, Pasco, Manatee, Sarasota, Polk ak Hernando.',
-        teamTitle: 'Rankontre ekip nou an',
-        hansBio1: 'Hans Peter Haahr fè JD li cum laude nan Fakilte Lwa Inivèsite Miami ak BA li nan Syans Politik magna cum laude nan Inivèsite South Alabama. Li te kòmanse karyè legal li nan Mase & Gasenheimer nan Miami anvan li te ale nan Cole, Scott & Kissane nan Tampa, kote li te sèvi kòm Asosye Senior Litijasyon.',
-        hansBio2: 'An 2007 li te fonde Haahr Law Group pou konsantre eksklizivman sou reprezante asire yo. Li gen yon evalyasyon Martindale-Hubbell BV epi li manm nan Florid Bar (#568457) ak Seksyon Pwopriyete Reyèl St. Petersburg Bar.',
-        hansBio3: 'Fèt nan Denmark e leve nan Etazini, Hans pale Anglè, Danwa, Suedwa ak Nòvejyen, e li yon manm aktif nan Chanm Komès Danwa-Ameriken.',
-        staciBio: 'Staci Haahr gen yon BBA nan Marymount University ak yon MBA nan Clemson. Li ap dirije operasyon kabinè a ak relasyon kliyan depi 2007, e li ede kliyan ti biznis ak enkòporasyon, konfigirasyon ajan anrejistre ak konfòmite kenbe antite.',
-        linaBio: 'Lina Rodriguez gen yon diplòm nan St. Petersburg College e li yon ispanik natif. Li prepare kontra, papye, lwaye, ak materyèl ka ak odyans, e li sèvi kòm pwen prensipal kontak kabinè a pou kliyan ki pale Panyòl.'
+        title: 'À Propos',
+        crumbHome: 'Accueil',
+        firmTitle: 'À propos du cabinet',
+        firmP1: 'Haahr Law Group, PL est un cabinet de contentieux basé à St. Petersburg, fondé en 2007 par Hans Peter Haahr pour offrir aux propriétaires de Tampa Bay un litigant sérieux à leurs côtés à la table des sinistres immobiliers.',
+        firmP2: 'Nous sommes admis à exercer devant les barreaux de Floride et du Tennessee, les Tribunaux de District des États-Unis pour les Districts Moyen et Sud de Floride, et la Cour Fédérale des Réclamations à Washington, D.C.',
+        firmP3: 'Notre structure boutique est intentionnelle. Les clients travaillent directement avec leur avocat de l\'admission jusqu\'à la résolution. Pas de renvoi à des associés, pas de gardiens juniors, pas de triage de centre d\'appels.',
+        firmP4: 'Nous acceptons des dossiers dans toute la Floride et nous déplaçons régulièrement dans les comtés de Pinellas, Hillsborough, Pasco, Manatee, Sarasota, Polk et Hernando.',
+        teamTitle: 'Rencontrez notre équipe',
+        hansBio1: 'Hans Peter Haahr a obtenu son JD cum laude à la Faculté de Droit de l\'Université de Miami et son BA en Sciences Politiques magna cum laude à l\'Université du Sud de l\'Alabama. Il a commencé sa carrière juridique chez Mase & Gasenheimer à Miami avant de rejoindre Cole, Scott & Kissane à Tampa, où il a été Associé Senior en Contentieux.',
+        hansBio2: 'En 2007 il a fondé Haahr Law Group afin de se consacrer exclusivement à la représentation des assurés. Il détient une évaluation Martindale-Hubbell BV et est membre du Barreau de Floride (#568457) et de la Section Immobilière du Barreau de St. Petersburg.',
+        hansBio3: 'Né au Danemark et élevé aux États-Unis, Hans parle anglais, danois, suédois et norvégien, et il est membre actif de la Chambre de Commerce Dano-Américaine.',
+        staciBio: 'Staci Haahr possède un BBA de Marymount University et un MBA de Clemson. Elle dirige les opérations du cabinet et les relations client depuis 2007, et accompagne les clients de petites entreprises dans la constitution de société, la désignation d\'un agent enregistré et le respect des obligations de maintien.',
+        linaBio: 'Lina Rodriguez est diplômée de St. Petersburg College et hispanophone native. Elle prépare les contrats, les actes, les baux et les documents de dossier et d\'audience, et sert de point de contact principal du cabinet pour les clients hispanophones.'
       },
       services: {
-        title: 'Sa Nou Fè',
-        intro: 'Nou litije sis kategori reklamasyon asirans yo ki pi souvan refize oswa peye mwens nan Florid. Klike sou nenpòt domèn pratik pou plis detay.',
-        otherTitle: 'Lòt domèn pratik',
-        otherIntro: 'Anplis reklamasyon asirans premye-pati, kabinè a jere zafè sivil ki gen rapò sou yon baz ka pa ka:',
+        title: 'Nos Services',
+        intro: 'Nous traitons les six catégories de sinistres d\'assurance les plus souvent refusées ou sous-évaluées en Floride. Cliquez sur un domaine pour en savoir plus.',
+        otherTitle: 'Autres domaines de pratique',
+        otherIntro: 'En complément des sinistres d\'assurance de première partie, le cabinet traite les affaires civiles connexes au cas par cas :',
         items: {
-          auto: { name: 'Reklamasyon Otomobil', blurb: 'Kost reparasyon ki sou-estime, diskisyon machin pèt total, ak limit ranplasman 30–35 pousan.' },
-          fire: { name: 'Domaj Dife & Lafimen', blurb: 'Diskisyon pèt total dapre Lwa Polis Valè Florid, repons sou envestigasyon koz ak orijin.' },
-          water: { name: 'Dlo & Tiyo Kase', blurb: 'Echèk tiyo, fwit aparèy, kouvèti pèt konsekan ak reklamasyon kondominyòm.' },
-          storm: { name: 'Siklòn & Tanpèt', blurb: 'Domaj van, lapli, ak tanpèt nonmen; repons sou refi "twati vye" ak "pa gen ouvèti".' },
-          roof: { name: 'Twati & Lagrèl', blurb: 'Prèv lagrèl, rapò enjenyè twati, ak ranplasman konplè ki gen kòd kòm baz.' },
-          sinkhole: { name: 'Sinkhole', blurb: 'Tès kat eleman efondreman tè katastwofik ak ankadreman estriktirèl §627.706.' }
+          auto: { name: 'Sinistres Automobile', blurb: 'Coûts de réparation sous-évalués, contestations de perte totale et le seuil de remplacement de 30 à 35 %.' },
+          fire: { name: 'Dégâts Incendie & Fumée', blurb: 'Contentieux de perte totale au titre de la Valued Policy Law de Floride, réponses aux investigations de cause et origine.' },
+          water: { name: 'Eau & Rupture de Tuyau', blurb: 'Défaillances de tuyauterie, fuites d\'électroménager, garantie de pertes consécutives et sinistres de copropriété.' },
+          storm: { name: 'Ouragan & Tempête', blurb: 'Dégâts par vent, pluie et tempête nommée ; réponses aux refus liés à un « toit ancien » ou « pas d\'ouverture ».' },
+          roof: { name: 'Toiture & Grêle', blurb: 'Preuves de grêle, rapports d\'ingénieurs en toiture et remplacement intégral imposé par le code.' },
+          sinkhole: { name: 'Affaissement', blurb: 'Le test à quatre éléments d\'effondrement catastrophique du sol et le cadre structurel §627.706.' }
         },
-        otherList: ['Litijasyon Sivil', 'Lwa Komèsyal', 'Blesi Pèsonèl ak Lanmò pa Neglijans', 'Reklamasyon Otèl ak Kondominyòm']
+        otherList: ['Contentieux Civil', 'Droit Commercial', 'Préjudice Corporel & Décès Accidentel', 'Sinistres Hôtels & Copropriétés']
       },
       practice: {
-        relatedTitle: 'Sèvis Nou Yo',
-        ctaTitle: 'Resevwa yon konsiltasyon san frè',
-        ctaButton: 'Kontakte Nou',
-        backToServices: '← Tout domèn pratik'
+        relatedTitle: 'Nos Services',
+        ctaTitle: 'Obtenez une consultation sans frais',
+        ctaButton: 'Nous Contacter',
+        backToServices: '← Tous les domaines de pratique'
       },
       blog: {
-        title: 'Konesans & gid',
-        intro: 'Konsèy pratik ak senp pou pwopriyetè Florid k ap fè fas ak asirans, sezon tanpèt ak diskisyon reklamasyon byen.',
-        readMore: 'Li plis',
-        recentTitle: 'Piblikasyon resan',
-        archivesTitle: 'Achiv',
-        topicsTitle: 'Sijè'
+        title: 'Analyses & guides',
+        intro: 'Conseils pratiques en langage clair pour les propriétaires de Floride confrontés à l\'assurance, à la saison des tempêtes et aux litiges de sinistres.',
+        readMore: 'Lire la suite',
+        recentTitle: 'Articles récents',
+        archivesTitle: 'Archives',
+        topicsTitle: 'Sujets'
       },
       contact: {
-        title: 'Kontakte Nou',
-        intro: 'Di nou sa ki te pase. Nou reponn chak demann nan yon jou travay, e konsiltasyon an toujou gratis.',
-        formTitle: 'Voye yon mesaj',
+        title: 'Nous Contacter',
+        intro: 'Dites-nous ce qui s\'est passé. Nous répondons à chaque demande dans le jour ouvré, et la consultation est toujours gratuite.',
+        formTitle: 'Envoyer un message',
         f: {
-          first: 'Prenon',
-          last: 'Non',
-          email: 'Imèl',
-          phone: 'Telefòn',
-          claim: 'Kalite reklamasyon',
-          message: 'Di nou sa ki te pase',
-          choose: 'Chwazi youn…',
-          submit: 'Voye Mesaj'
+          first: 'Prénom',
+          last: 'Nom',
+          email: 'Email',
+          phone: 'Téléphone',
+          claim: 'Type de sinistre',
+          message: 'Dites-nous ce qui s\'est passé',
+          choose: 'Choisir…',
+          submit: 'Envoyer le Message'
         },
-        claims: ['Otomobil / Domaj Byen', 'Dife & Lafimen', 'Siklòn / Tanpèt', 'Twati / Lagrèl', 'Sinkhole', 'Dlo / Tiyo Kase', 'Lòt'],
-        success: 'Fòm demonstrasyon — mesaj ou ta voye. (Pa gen okenn done ki transmèt sou sit demonstrasyon sa a.)',
-        infoTitle: 'Biwo',
+        claims: ['Auto / Dégâts Matériels', 'Incendie & Fumée', 'Ouragan / Tempête', 'Toiture / Grêle', 'Affaissement', 'Eau / Rupture de Tuyau', 'Autre'],
+        success: 'Formulaire de démonstration — votre message aurait été envoyé. (Aucune donnée n\'est transmise sur ce site de démo.)',
+        infoTitle: 'Bureau',
         addrLine1: '4159 Central Avenue',
         addrLine2: 'St. Petersburg, FL 33713',
-        phoneLabel: 'Telefòn',
-        emailLabel: 'Imèl',
-        hoursLabel: 'Lè',
-        hours: 'Len–Van · Sou randevou'
+        phoneLabel: 'Téléphone',
+        emailLabel: 'Email',
+        hoursLabel: 'Horaires',
+        hours: 'Lun–Ven · Sur rendez-vous'
       },
       legal: {
-        title: 'Avi Legal',
-        p1: 'Enfòmasyon sou sit wèb sa a bay sèlman pou rezon enfòmasyon jeneral epi li pa konstitye konsèy legal. Vizite sit sa a, kontakte kabinè a, oswa transmèt enfòmasyon nan sit wèb sa a pa kreye yon relasyon avoka-kliyan.',
-        warrantyH: 'Garanti legal',
-        warrantyP: 'Haahr Law Group pa fè reprezantasyon oswa garanti, eksprime oswa implisit, konsènan presizyon, entegrite oswa aktyalite okenn kontni sou sit sa a. Lwa Florid ak entèpretasyon polis asirans chanje souvan; pa konte sou okenn deklarasyon isit la kòm yon ranplasman pou konsèy espesifik nan ka pa yon avoka ki gen lisans.',
-        liabilityH: 'Limitasyon responsabilite',
-        liabilityP: 'Nan okenn ka, Haahr Law Group, avoka li yo, anplwaye oswa kontribitè yo p ap responsab pou nenpòt domaj endirèk, aksidan, espesyal oswa konsekan ki soti nan oswa an koneksyon ak itilizasyon sit wèb sa a.',
-        relH: 'Relasyon avoka-kliyan',
-        relP: 'Pa gen okenn relasyon avoka-kliyan ki fòme jiskaske (a) kabinè a fini yon verifikasyon konfli ak (b) yon akò angajman ekri siyen pa de pati yo. Tanpri pa voye enfòmasyon konfidansyèl atravè fòm kontak la jiskaske relasyon sa a etabli.'
+        title: 'Avis Juridique',
+        p1: 'Les informations sur ce site sont fournies à titre purement informatif et ne constituent pas un conseil juridique. Visiter ce site, contacter le cabinet ou transmettre des informations via ce site ne crée pas de relation avocat-client.',
+        warrantyH: 'Garantie légale',
+        warrantyP: 'Haahr Law Group ne fait aucune déclaration ou garantie, expresse ou implicite, concernant l\'exactitude, l\'exhaustivité ou l\'actualité du contenu de ce site. Le droit de la Floride et l\'interprétation des polices d\'assurance évoluent fréquemment ; ne vous fiez à aucune déclaration ici comme substitut à un conseil spécifique au dossier d\'un avocat agréé.',
+        liabilityH: 'Limitation de responsabilité',
+        liabilityP: 'En aucun cas Haahr Law Group, ses avocats, son personnel ou ses contributeurs ne pourront être tenus responsables de tout dommage indirect, accessoire, spécial ou consécutif découlant de l\'utilisation de ce site.',
+        relH: 'Relation avocat-client',
+        relP: 'Aucune relation avocat-client ne se forme tant que (a) le cabinet n\'a pas effectué une vérification de conflit et (b) un accord d\'engagement écrit n\'est pas signé par les deux parties. Veuillez ne pas envoyer d\'informations confidentielles via le formulaire de contact tant que cette relation n\'est pas établie.'
       },
       footer: {
-        notice: 'Avi',
-        contact: 'Kontak',
-        follow: 'Suiv Nou',
-        adv: 'Anboche yon avoka se yon desizyon enpòtan ki pa ta dwe baze sèlman sou piblisite. Anvan ou deside, mande kabinè a voye w enfòmasyon ekri gratis sou kalifikasyon ak eksperyans li.',
-        legal: 'Avi Legal',
-        copyright: '© 2026 Haahr Law Group. Tout dwa rezève.',
-        demo: 'Vèsyon demo · Pa sit ofisyèl kabinè a'
+        notice: 'Avis',
+        contact: 'Contact',
+        follow: 'Suivez-nous',
+        adv: 'L\'embauche d\'un avocat est une décision importante qui ne devrait pas reposer uniquement sur la publicité. Avant de décider, demandez au cabinet de vous envoyer gratuitement des informations écrites sur ses qualifications et son expérience.',
+        legal: 'Avis Juridique',
+        copyright: '© 2026 Haahr Law Group. Tous droits réservés.',
+        demo: 'Version démo · Pas le site officiel du cabinet'
       },
       banner: {
-        text: 'Sit demonstrasyon · Rebati estatik pou revizyon pòtfolyo · Pa afilye ak Haahr Law Group'
+        text: 'Site de démonstration · Reconstruction statique pour évaluation de portfolio · Non affilié à Haahr Law Group'
       },
       services_v: {
-        autoH: 'Reklamasyon Domaj Byen Otomobil',
-        fireH: 'Reklamasyon Domaj Dife ak Lafimen',
-        stormH: 'Reklamasyon Siklòn ak Tanpèt',
-        roofH: 'Reklamasyon Domaj Twati ak Lagrèl',
-        sinkholeH: 'Reklamasyon Domaj Sinkhole',
-        waterH: 'Reklamasyon Domaj Dlo'
+        autoH: 'Sinistres de Dommages Matériels Automobile',
+        fireH: 'Sinistres Incendie & Fumée',
+        stormH: 'Sinistres Ouragan & Tempête',
+        roofH: 'Sinistres Toiture & Grêle',
+        sinkholeH: 'Sinistres d\'Affaissement de Terrain',
+        waterH: 'Sinistres Dégâts des Eaux'
       }
     }
   };

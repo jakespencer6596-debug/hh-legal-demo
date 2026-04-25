@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Haahr Law Group — Tampa Bay Insurance Claims Litigation</title>
   <meta name="description" content="Haahr Law Group represents Florida policyholders against insurance carriers on property, fire, hurricane, roof, sinkhole and water damage claims. Free consultation.">
-  <script src="/assets/js/preload.js"></script>
+  <script src="/js/preload.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B81429'/%3E%3Ctext x='16' y='22' font-family='Montserrat,Arial,sans-serif' font-size='16' font-weight='800' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -26,7 +26,7 @@
       <div class="group" role="group" aria-label="Language">
         <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
         <button class="lang-btn" data-lang="es" aria-label="Español">ES</button>
-        <button class="lang-btn" data-lang="ht" aria-label="Kreyòl">HT</button>
+        <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
       </div>
       <span class="label" data-i18n="toolbar.theme">Theme</span>
       <div class="group" role="group" aria-label="Color theme">
@@ -62,17 +62,17 @@
         <li><a href="/" aria-current="page" data-i18n="nav.home">Home</a></li>
         <li><a href="/about.html" data-i18n="nav.about">About</a></li>
         <li class="has-dropdown">
-          <a href="/services/" data-i18n="nav.services">What We Do</a>
+          <a href="/services.html" data-i18n="nav.services">What We Do</a>
           <div class="dropdown" role="menu">
-            <a href="/services/auto.html"     data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
-            <a href="/services/fire.html"     data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
-            <a href="/services/storm.html"    data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
-            <a href="/services/roof.html"     data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
-            <a href="/services/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
-            <a href="/services/water.html"    data-i18n="nav.services_dropdown.water">Water Damage</a>
+            <a href="/auto.html"     data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
+            <a href="/fire.html"     data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
+            <a href="/storm.html"    data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
+            <a href="/roof.html"     data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
+            <a href="/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
+            <a href="/water.html"    data-i18n="nav.services_dropdown.water">Water Damage</a>
           </div>
         </li>
-        <li><a href="/blog/" data-i18n="nav.blog">Blog</a></li>
+        <li><a href="/blog.html" data-i18n="nav.blog">Blog</a></li>
         <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
     </nav>
@@ -83,13 +83,16 @@
 
 <section class="hero">
   <div class="container">
-    <span class="hero-eyebrow" data-i18n="home.hero.eyebrow">Tampa Bay Insurance Litigation</span>
-    <h1 data-i18n="home.hero.title">When the insurance company says no, we say not so fast.</h1>
-    <p class="lead" data-i18n="home.hero.lead">Haahr Law Group represents Florida policyholders against insurance carriers on property, fire, hurricane, roof, sinkhole and water-damage claims. Over fifteen years on your side of the table.</p>
-    <div class="cta-row">
-      <a class="btn" href="/contact.html" data-i18n="home.hero.ctaPrimary">Free Consultation</a>
-      <a class="btn btn-on-dark" href="/about.html" data-i18n="home.hero.ctaSecondary">About the Firm</a>
+    <div>
+      <span class="hero-eyebrow" data-i18n="home.hero.eyebrow">Insurance Claims Litigation · Tampa Bay</span>
+      <h1 data-i18n="home.hero.title">HAAHR LAW GROUP</h1>
+      <p class="lead" data-i18n="home.hero.lead">Our insurance attorneys proudly represent policyholders in a wide variety of insurance disputes and have successfully litigated cases arising out of both commercial and personal lines policies.</p>
+      <div class="cta-row">
+        <a class="btn btn-secondary" href="/about.html" data-i18n="home.hero.ctaSecondary">ABOUT HLG</a>
+        <a class="btn" href="/contact.html" data-i18n="home.hero.ctaPrimary">CONSULTATION</a>
+      </div>
     </div>
+    <div class="portrait" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -108,7 +111,7 @@
         <h2 data-i18n="home.intro.title">A boutique firm built around one principle: the policyholder.</h2>
         <p data-i18n="home.intro.p1">We litigate first-party property claims in state and federal courts across Florida — from underpaid auto repairs and denied hurricane claims to total-loss fire investigations and complex sinkhole disputes.</p>
         <p data-i18n="home.intro.p2">Insurers know the statutes. So do we. We invoke Florida's Valued Policy Law, the building-code-driven full-replacement provisions, and the §627.706 sinkhole framework when the facts support them — and we never charge a fee unless we recover.</p>
-        <a class="btn btn-outline" href="/services/" data-i18n="home.intro.cta">Learn More</a>
+        <a class="btn btn-outline" href="/services.html" data-i18n="home.intro.cta">Learn More</a>
       </div>
       <aside>
         <div class="rail">
@@ -134,37 +137,37 @@
         <div class="icon">🚗</div>
         <h3 data-i18n="services.items.auto.name">Automotive Claims</h3>
         <p data-i18n="services.items.auto.blurb">Underestimated repair costs, totaled-vehicle disputes, and the 30–35 percent replacement threshold.</p>
-        <a class="card-link" href="/services/auto.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/auto.html" data-i18n="blog.readMore">Read more</a>
       </article>
       <article class="card service-card">
         <div class="icon">🔥</div>
         <h3 data-i18n="services.items.fire.name">Fire & Smoke Damage</h3>
         <p data-i18n="services.items.fire.blurb">Total-loss disputes under Florida's Valued Policy Law, cause-and-origin investigation pushback.</p>
-        <a class="card-link" href="/services/fire.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/fire.html" data-i18n="blog.readMore">Read more</a>
       </article>
       <article class="card service-card">
         <div class="icon">💧</div>
         <h3 data-i18n="services.items.water.name">Water & Pipe Burst</h3>
         <p data-i18n="services.items.water.blurb">Pipe failures, dishwasher and refrigerator leaks, ensuing-loss coverage and condo above-unit claims.</p>
-        <a class="card-link" href="/services/water.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/water.html" data-i18n="blog.readMore">Read more</a>
       </article>
       <article class="card service-card">
         <div class="icon">🌀</div>
         <h3 data-i18n="services.items.storm.name">Hurricane & Storm</h3>
         <p data-i18n="services.items.storm.blurb">Wind, rain, and named-storm damage; rebuts to "old roof" and "no opening" denials.</p>
-        <a class="card-link" href="/services/storm.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/storm.html" data-i18n="blog.readMore">Read more</a>
       </article>
       <article class="card service-card">
         <div class="icon">🏠</div>
         <h3 data-i18n="services.items.roof.name">Roof & Hail Damage</h3>
         <p data-i18n="services.items.roof.blurb">Hail evidence, roofing-engineer reports, and code-driven full-replacement entitlement.</p>
-        <a class="card-link" href="/services/roof.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/roof.html" data-i18n="blog.readMore">Read more</a>
       </article>
       <article class="card service-card">
         <div class="icon">⛰️</div>
         <h3 data-i18n="services.items.sinkhole.name">Sinkhole Damage</h3>
         <p data-i18n="services.items.sinkhole.blurb">The four-element catastrophic ground cover collapse test and the §627.706 structural framework.</p>
-        <a class="card-link" href="/services/sinkhole.html" data-i18n="blog.readMore">Read more</a>
+        <a class="card-link" href="/sinkhole.html" data-i18n="blog.readMore">Read more</a>
       </article>
     </div>
   </div>
@@ -218,7 +221,7 @@
           <div class="meta">Jun 20 2021 · <span class="tag">Tips</span></div>
           <h4>5 Reasons Your Hurricane Insurance Claim Is Denied — And One Solution</h4>
           <p>Wind vs. flood, "old roof" denials, late-notice traps, and the policy provision insurers hope you never read.</p>
-          <a class="card-link" href="/blog/5-reasons-hurricane-claim-denied.html" data-i18n="blog.readMore">Read more</a>
+          <a class="card-link" href="/posts/5-reasons-hurricane-claim-denied.html" data-i18n="blog.readMore">Read more</a>
         </div>
       </article>
       <article class="card post-card">
@@ -227,7 +230,7 @@
           <div class="meta">May 20 2021 · <span class="tag">Tips</span></div>
           <h4>Fire Safety Top Tips for Your Florida Home & Business</h4>
           <p>The four highest-impact prevention steps and what to document the moment a fire occurs.</p>
-          <a class="card-link" href="/blog/fire-safety-tips.html" data-i18n="blog.readMore">Read more</a>
+          <a class="card-link" href="/posts/fire-safety-tips.html" data-i18n="blog.readMore">Read more</a>
         </div>
       </article>
       <article class="card post-card">
@@ -236,12 +239,12 @@
           <div class="meta">Apr 25 2021 · <span class="tag">Tips</span></div>
           <h4>Making an Insurance Claim: A Guide for New Florida Residents</h4>
           <p>What hurricane deductibles, sinkhole riders and Citizens coverage actually mean — before you need them.</p>
-          <a class="card-link" href="/blog/florida-claims-guide.html" data-i18n="blog.readMore">Read more</a>
+          <a class="card-link" href="/posts/florida-claims-guide.html" data-i18n="blog.readMore">Read more</a>
         </div>
       </article>
     </div>
     <div class="center mt-4">
-      <a class="btn btn-outline" href="/blog/" data-i18n="home.blog.cta">Read the blog</a>
+      <a class="btn btn-outline" href="/blog.html" data-i18n="home.blog.cta">Read the blog</a>
     </div>
   </div>
 </section>
@@ -287,9 +290,9 @@
   </div>
 </footer>
 
-<script src="/assets/js/i18n.js"></script>
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/text-size.js"></script>
-<script src="/assets/js/nav.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/text-size.js"></script>
+<script src="/js/nav.js"></script>
 </body>
 </html>

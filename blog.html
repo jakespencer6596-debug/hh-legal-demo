@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog — Haahr Law Group</title>
   <meta name="description" content="Insights and guides for Florida policyholders.">
-  <script src="/assets/js/preload.js"></script>
+  <script src="/js/preload.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23B81429'/%3E%3Ctext x='16' y='22' font-family='Montserrat,Arial,sans-serif' font-size='16' font-weight='800' text-anchor='middle' fill='white'%3EH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
@@ -18,7 +18,7 @@
   <a class="phone" href="tel:+17278967777" data-i18n="util.phone">(727) 896-7777</a>
   <div class="toolbar" role="toolbar" aria-label="Site preferences">
     <span class="label" data-i18n="toolbar.lang">Language</span>
-    <div class="group" role="group" aria-label="Language"><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="es">ES</button><button class="lang-btn" data-lang="ht">HT</button></div>
+    <div class="group" role="group" aria-label="Language"><button class="lang-btn" data-lang="en">EN</button><button class="lang-btn" data-lang="es">ES</button><button class="lang-btn" data-lang="fr">FR</button></div>
     <span class="label" data-i18n="toolbar.theme">Theme</span>
     <div class="group" role="group" aria-label="Color theme"><button data-theme-set="light" data-i18n-attr="aria-label" data-i18n="toolbar.themeLight" aria-label="Light theme">☀</button><button data-theme-set="system" data-i18n-attr="aria-label" data-i18n="toolbar.themeSystem" aria-label="System theme">◐</button><button data-theme-set="dark" data-i18n-attr="aria-label" data-i18n="toolbar.themeDark" aria-label="Dark theme">☾</button></div>
     <span class="label" data-i18n="toolbar.size">Text Size</span>
@@ -32,16 +32,16 @@
   <nav class="main-nav" id="primary-nav" aria-label="Primary"><ul>
     <li><a href="/" data-i18n="nav.home">Home</a></li>
     <li><a href="/about.html" data-i18n="nav.about">About</a></li>
-    <li class="has-dropdown"><a href="/services/" data-i18n="nav.services">What We Do</a>
+    <li class="has-dropdown"><a href="/services.html" data-i18n="nav.services">What We Do</a>
       <div class="dropdown" role="menu">
-        <a href="/services/auto.html" data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
-        <a href="/services/fire.html" data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
-        <a href="/services/storm.html" data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
-        <a href="/services/roof.html" data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
-        <a href="/services/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
-        <a href="/services/water.html" data-i18n="nav.services_dropdown.water">Water Damage</a>
+        <a href="/auto.html" data-i18n="nav.services_dropdown.auto">Automotive Claims</a>
+        <a href="/fire.html" data-i18n="nav.services_dropdown.fire">Fire & Smoke Damage</a>
+        <a href="/storm.html" data-i18n="nav.services_dropdown.storm">Hurricane & Storm</a>
+        <a href="/roof.html" data-i18n="nav.services_dropdown.roof">Roof & Hail Damage</a>
+        <a href="/sinkhole.html" data-i18n="nav.services_dropdown.sinkhole">Sinkhole Damage</a>
+        <a href="/water.html" data-i18n="nav.services_dropdown.water">Water Damage</a>
       </div></li>
-    <li><a href="/blog/" aria-current="page" data-i18n="nav.blog">Blog</a></li>
+    <li><a href="/blog.html" aria-current="page" data-i18n="nav.blog">Blog</a></li>
     <li><a href="/contact.html" data-i18n="nav.contact">Contact</a></li>
   </ul></nav>
 </div></header>
@@ -66,7 +66,7 @@
     <div class="meta">Jun 20 2021 · <span class="tag">Tips</span></div>
     <h4>5 Reasons Your Hurricane Insurance Claim Is Denied — And One Solution</h4>
     <p>Hurricane season turns Florida into a playground for claim denials. Here are the five most common reasons carriers say no — and the one move that flips most of </p>
-    <a class="card-link" href="/blog/5-reasons-hurricane-claim-denied.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/5-reasons-hurricane-claim-denied.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
 <article class="card post-card">
@@ -75,7 +75,7 @@
     <div class="meta">May 20 2021 · <span class="tag">Tips</span></div>
     <h4>Fire Safety Top Tips for Your Florida Home & Business</h4>
     <p>Florida's combination of dry winters, lightning-prone summers and aging electrical infrastructure makes fire prevention a year-round concern. Five steps that pa</p>
-    <a class="card-link" href="/blog/fire-safety-tips.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/fire-safety-tips.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
 <article class="card post-card">
@@ -84,7 +84,7 @@
     <div class="meta">Apr 25 2021 · <span class="tag">Tips</span></div>
     <h4>Making an Insurance Claim: A Guide for New Florida Residents</h4>
     <p>If you just moved to Florida from anywhere else in the country, your insurance experience is about to change. Here's the orientation no one gave you at closing.</p>
-    <a class="card-link" href="/blog/florida-claims-guide.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/florida-claims-guide.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
 <article class="card post-card">
@@ -93,7 +93,7 @@
     <div class="meta">Mar 25 2021 · <span class="tag">Tips</span></div>
     <h4>Top Ten Security Tips for Your Florida Home</h4>
     <p>Burglary and home invasion are insurable events, but the cleanest claim is the one you never have to file. Ten low-cost upgrades that disproportionately reduce </p>
-    <a class="card-link" href="/blog/home-security-tips.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/home-security-tips.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
 <article class="card post-card">
@@ -102,7 +102,7 @@
     <div class="meta">Feb 5 2021 · <span class="tag">Community</span></div>
     <h4>Local Loves: Our Top Picks for Food and Drink in St. Pete's</h4>
     <p>We spend a lot of time downtown between courthouse trips and client meetings. Here are the spots that keep us going — none sponsored, all favorites.</p>
-    <a class="card-link" href="/blog/local-favorites.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/local-favorites.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
 <article class="card post-card">
@@ -111,7 +111,7 @@
     <div class="meta">Jan 14 2021 · <span class="tag">Tips</span></div>
     <h4>Why Taking a Home Inventory Is a Winning New Year's Resolution</h4>
     <p>It's the one resolution that pays for itself the moment you need it — and the one almost nobody actually does.</p>
-    <a class="card-link" href="/blog/home-inventory.html" data-i18n="blog.readMore">Read more</a>
+    <a class="card-link" href="/posts/home-inventory.html" data-i18n="blog.readMore">Read more</a>
   </div>
 </article>
     </div>
@@ -144,8 +144,8 @@
   </div>
 </div></footer>
 
-<script src="/assets/js/i18n.js"></script>
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/text-size.js"></script>
-<script src="/assets/js/nav.js"></script>
+<script src="/js/i18n.js"></script>
+<script src="/js/theme.js"></script>
+<script src="/js/text-size.js"></script>
+<script src="/js/nav.js"></script>
 </body></html>

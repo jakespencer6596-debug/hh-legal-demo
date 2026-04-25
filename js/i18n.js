@@ -400,7 +400,7 @@
           ctaPrimary: 'CONSULTATION',
           ctaSecondary: 'À PROPOS HLG'
         },
-        bandTitle: 'Obtenez une Consultation Sans Frais Aujourd'hui',
+        bandTitle: "Obtenez une Consultation Sans Frais Aujourd'hui",
         bandCTA: 'PARLONS-EN',
         bandCTA2: 'COMMENÇONS',
         intro: {

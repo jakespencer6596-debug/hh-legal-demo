@@ -490,16 +490,17 @@ body.home .hero { margin-top: 0; }        /* hero starts immediately under heade
 .hero {
   position: relative;
   background-image: url('/images/hans_haahr.jpg');
-  background-size: auto 100%;      /* image height fills hero, width scales naturally */
-  background-position: right center;
+  background-size: auto 115%;      /* slight overscan so photo fills more width like live */
+  background-position: right top;
   background-repeat: no-repeat;
-  background-color: #fff;          /* match live: white left side */
+  background-color: #fff;
   color: var(--text);
   padding: 0;
   overflow: hidden;
-  min-height: 78vh;
+  min-height: 86vh;                /* taller hero so photo dominates */
   margin-top: 0;
 }
+@media (min-width: 1600px) { .hero { background-size: auto 110%; } }
 /* No overlay gradient — live shows the photo as-is on its right; left is plain white */
 .hero::before { content: none; }
 .hero .container {

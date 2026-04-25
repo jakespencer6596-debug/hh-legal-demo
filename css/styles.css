@@ -311,7 +311,9 @@ ul, ol { padding-left: 1.25rem; }
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
-  font-size: .95rem;
+  font-size: .8125rem;        /* live: ~13px */
+  letter-spacing: .08em;
+  text-transform: uppercase;  /* live nav is all caps */
   padding: .35rem 0;
   position: relative;
 }
